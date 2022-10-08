@@ -25,7 +25,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'user_type'
+        'role_id'
     ];
 
     /**
@@ -59,9 +59,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Formation::class, 'favourites', 'user_id', 'formation_id')->withTimeStamps();
     }
-
-    public function roles()
+    public function role()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->hasOne('App\Models\Role', 'id', 'role_id');
     }
 }

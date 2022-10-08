@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Categorie::truncate();
-        \App\Models\User::factory(10)->create();
 
         $categories = [
             'Informatique',
@@ -31,17 +30,8 @@ class DatabaseSeeder extends Seeder
             Categorie::create(['name' => $categorie]);
         }
 
-        Role::truncate();
-        $adminRole = Role::create(['name' => 'admin']);
-
-        $admin = User::create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'user_type' => 'admin',
-            'password' => bcrypt('admin@gmail.com'),
-            'email_verified_at' => NOW()
-        ]);
-
-        $admin->roles()->attach($adminRole);
+        Role::create(['name' => 'gerant']);
+        Role::create(['name' => 'admin']);
+        Role::create(['name' => 'etudiant']);
     }
 }
