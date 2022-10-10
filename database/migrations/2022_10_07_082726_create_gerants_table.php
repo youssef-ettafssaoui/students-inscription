@@ -15,9 +15,9 @@ class CreateGerantsTable extends Migration
     {
         Schema::create('gerants', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('logo');
             $table->integer('user_id');
             $table->string('gname');
-            $table->string('slug');
             $table->string('address');
             $table->string('phone');
             $table->string('education');

@@ -62,17 +62,15 @@
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo_container mr-auto">
                                     <a href="#">
-                                        <div class="logo_text">Lingua</div>
+                                        <div class="logo_text">IRISI</div>
                                     </a>
                                 </div>
                                 <nav class="main_nav_contaner">
                                     <ul class="main_nav">
-                                        <li class="active"><a href="index.html">Home</a></li>
-                                        <li><a href="courses.html">Courses</a></li>
-                                        <li><a href="instructors.html">Instructors</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li class="active"><a href="/">ACCUEIL</a></li>
+                                        <li><a href="/formations">NOS FORMATIONS</a></li>
+                                        <li><a href="instructors.html">GÉRANTS</a></li>
+                                        <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_content_right ml-auto text-right">
