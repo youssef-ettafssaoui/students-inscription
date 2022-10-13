@@ -53,7 +53,7 @@
                                 @foreach ($categories as $key => $categorie)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td><b>{{ strtoupper($categorie->name) }}</b></td>
+                                        <td><b>{{ $categorie->name }}</b></td>
 
                                         <td>
                                             <div class="table-actions">

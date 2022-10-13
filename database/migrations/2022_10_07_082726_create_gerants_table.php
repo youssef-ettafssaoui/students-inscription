@@ -18,6 +18,14 @@ class CreateGerantsTable extends Migration
             $table->string('logo');
             $table->integer('user_id');
             $table->string('gname');
+            $table->string('slug');
+            $table->string('position');
+            $table->string('work');
+            $table->string('origin');
+            $table->string('faceboock')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedIn')->nullable();
+            $table->string('youtube')->nullable();
             $table->string('address');
             $table->string('phone');
             $table->string('education');

@@ -26,7 +26,7 @@ class CreateFormationsTable extends Migration
             $table->integer('status');
             $table->date('last_date');
             $table->date('masse_horraire');
-            $table->integer('category_id');
+            $table->integer('categorie_id');
             $table->timestamps();
         });
     }

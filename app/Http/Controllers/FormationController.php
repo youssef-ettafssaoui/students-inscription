@@ -13,10 +13,6 @@ use Illuminate\Http\Request;
 
 class FormationController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('gerant', ['except' => array('index', 'show', 'apply', 'allFormations', 'searchFormations')]);
-    }
 
     public function index()
     {
@@ -24,8 +20,8 @@ class FormationController extends Controller
         $categories = Categorie::with('formations')->get();
         $posts = Post::where('status', 1)->get();
         $testimonial = Testimonial::orderBy('id', 'DESC')->first();
-        $gerants = Gerant::get()->random(12);
-        return view('welcome', compact('formations', 'gerants', 'categories', 'posts', 'testimonial'));
+        // $gerants = Gerant::get()->random(12);
+        return view('home', compact('formations', 'categories', 'posts', 'testimonial'));
     }
 
     public function show($id, Formation $formation)
@@ -36,7 +32,6 @@ class FormationController extends Controller
 
     public function formationRecommendations($formation)
     {
-
         $data = [];
 
         $formationsBasedOnCategories = Formation::latest()->where('category_id', $formation->category_id)

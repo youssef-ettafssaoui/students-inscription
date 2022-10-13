@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\GerantController;
 use Illuminate\Support\Facades\Route;
@@ -26,14 +27,6 @@ Route::get('/', function () {
 });
 
 // SECTION DES FORMATIONS :
-Route::get('/formations/create', [FormationController::class, 'create'])->name('formation.create');
-
-Route::post('/formations/create', [FormationController::class, 'store'])->name('formation.store');
-
-Route::get('/formations/{id}/edit', [FormationController::class, 'edit'])->name('formation.edit');
-
-Route::post('/formations/{id}/edit', [FormationController::class, 'update'])->name('formation.update');
-
 Route::get('/formations/ma-formation', [FormationController::class, 'maformation'])->name('ma.formation');
 
 Route::get('/formations/applications', [FormationController::class, 'applicant'])->name('applicant');
@@ -73,30 +66,41 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::group(['middleware' => ['auth', 'gerant']], function () {
+    Route::get('/formations/create', [FormationController::class, 'create'])->name('formation.create');
+
+    Route::post('/formations/create', [FormationController::class, 'store'])->name('formation.store');
+
+    Route::get('/formations/{id}/edit', [FormationController::class, 'edit'])->name('formation.edit');
+
+    Route::post('/formations/{id}/edit', [FormationController::class, 'update'])->name('formation.update');
+});
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('categorie', CategorieController::class);
+    Route::get('/posts', [DashboardController::class, 'index'])->name('post.index');
 
-    Route::get('/dashboard/create', [DashboardController::class, 'create']);
+    Route::get('/posts/create', [DashboardController::class, 'create'])->name('post.create');
 
-    Route::post('/dashboard/create', [DashboardController::class, 'store'])->name('post.store');
+    Route::post('/posts/create', [DashboardController::class, 'store'])->name('post.store');
 
-    Route::post('/dashboard/destroy', [DashboardController::class, 'destroy'])->name('post.delete');
+    Route::post('/posts/destroy', [DashboardController::class, 'destroy'])->name('post.delete');
 
-    Route::get('/dashboard/{id}/edit', [DashboardController::class, 'edit'])->name('post.edit');
+    Route::get('/posts/{id}/edit', [DashboardController::class, 'edit'])->name('post.edit');
 
-    Route::post('/dashboard/{id}/update', [DashboardController::class, 'update'])->name('post.update');
+    Route::post('/posts/{id}/update', [DashboardController::class, 'update'])->name('post.update');
 
-    Route::get('/dashboard/trash', [DashboardController::class, 'trash']);
+    Route::get('/posts/trash', [DashboardController::class, 'trash'])->name(('post.trash'));
 
-    Route::get('/dashboard/{id}/trash', [DashboardController::class, 'restore'])->name('post.restore');
+    Route::get('/posts/{id}/trash', [DashboardController::class, 'restore'])->name('post.restore');
 
-    Route::get('/dashboard/{id}/toggle', [DashboardController::class, 'toggle'])->name('post.toggle');
+    Route::get('/posts/{id}/toggle', [DashboardController::class, 'toggle'])->name('post.toggle');
 
     Route::get('/posts/{id}/{slug}', [DashboardController::class, 'show'])->name('post.show');
 
     Route::get('/dashboard/formations', [DashboardController::class, 'getAllFormations']);
 
     Route::get('/dashboard/{id}/formations', [DashboardController::class, 'changeFormationStatus'])->name('formation.status');
+
     // Admin Site Setting Routes :
     Route::get('/site', [SiteSettingController::class, 'SiteSetting'])->name('site.setting');
     Route::post('/site/update', [SiteSettingController::class, 'SiteSettingUpdate'])->name('update.sitesetting');

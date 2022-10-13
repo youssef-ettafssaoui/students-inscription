@@ -13,7 +13,7 @@ class FormationPostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class FormationPostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:10',
+            'description' => 'required',
+            'texte' => 'required',
+            'masse_horraire' => 'required|numeric',
+            'last_date' => 'required',
         ];
     }
 }
