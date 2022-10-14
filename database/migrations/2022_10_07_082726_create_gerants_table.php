@@ -15,20 +15,20 @@ class CreateGerantsTable extends Migration
     {
         Schema::create('gerants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->integer('user_id');
             $table->string('gname');
             $table->string('slug');
-            $table->string('position');
-            $table->string('work');
-            $table->string('origin');
+            $table->string('position')->nullable();
+            $table->string('work')->nullable();
+            $table->string('origin')->nullable();
             $table->string('faceboock')->nullable();
             $table->string('instagram')->nullable();
             $table->string('linkedIn')->nullable();
             $table->string('youtube')->nullable();
-            $table->string('address');
-            $table->string('phone');
-            $table->string('education');
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('education')->nullable();
             $table->timestamps();
         });
     }

@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 
 class GerantController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('gerant', ['except' => array('index', 'gerant')]);
-    }
 
     public function index($id, Gerant $gerant)
     {

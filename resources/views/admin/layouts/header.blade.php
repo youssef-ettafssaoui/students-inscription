@@ -138,7 +138,7 @@
                         <div class="dropdown">
                             <a class="dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <strong>{{ strtoupper(Auth()->user()->name) }}</strong>
+                                <strong>{{ strtoupper(Auth()->user()->email) }}</strong>
 
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">

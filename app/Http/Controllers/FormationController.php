@@ -108,7 +108,7 @@ class FormationController extends Controller
             'slug' => str_slug(request('title')),
             'description' => request('description'),
             'texte' => request('texte'),
-            'category_id' => request('category'),
+            'categorie_id' => request('categorie'),
             'type' => request('type'),
             'status' => request('status'),
             'last_date' => request('last_date'),

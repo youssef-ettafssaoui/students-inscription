@@ -58,9 +58,6 @@
                                     @endif
                                 </div>
                             </div>
-
-
-
                         </div>
 
                         <div class="row">
@@ -100,8 +97,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="category">Catégorie :</label>
-                                    <select name="category" class="form-control select">
+                                    <label for="categorie">Catégorie :</label>
+                                    <select name="categorie" class="form-control">
                                         @foreach (App\Models\Categorie::all() as $cat)
                                             <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                                         @endforeach

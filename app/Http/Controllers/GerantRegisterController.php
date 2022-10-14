@@ -2,31 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Etudiant;
+use App\Models\Gerant;
+use App\Models\Role;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class EtudiantRegisterController extends Controller
+class GerantRegisterController extends Controller
 {
-    public function employerRegister(Request $request)
+    public function gerantRegister(Request $request)
     {
 
         $this->validate($request, [
-            'cin' => 'required|string|max:10',
-            'cin' => 'required|string|max:10',
+            'gname' => 'required|string|max:60',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed'
         ]);
-
+        $role = Role::where('name', 'gerant')->first();
         $user =  User::create([
             'email' => request('email'),
             'password' => Hash::make(request('password')),
-            'user_type' => request('user_type'),
+            'role_id' => $role->id,
         ]);
-        Etudiant::create([
+        Gerant::create([
             'user_id' => $user->id,
-            'cin' => request('cin'),
+            'gname' => request('gname'),
             'slug' => str_slug(request('cname'))
         ]);
         return redirect()->back()->with('message', 'Veuillez vérifier votre e-mail en cliquant sur le lien envoyé à votre adresse e-mail');

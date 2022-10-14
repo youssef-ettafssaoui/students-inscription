@@ -42,8 +42,10 @@
                                             <ul>
                                                 <li><a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i>
                                                         S'IDENTIFIER</a></li>
-                                                <li><a href="/register"><i class="fa fa-sign-out"
-                                                            aria-hidden="true"></i>S'INSCRIRE</a></li>
+                                                <li><a href="/register"><i class="fa fa-users"
+                                                            aria-hidden="true"></i>ESPACE ETUDIANTS</a></li>
+                                                <li><a href="{{ route('gerant.register') }}"><i class="fa fa-user"
+                                                            aria-hidden="true"></i>ESPACE GÉRANTS</a></li>
                                             </ul>
                                         </div>
                                     </div>

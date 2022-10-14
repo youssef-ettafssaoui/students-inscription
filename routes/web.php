@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\GerantController;
+use App\Http\Controllers\GerantRegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
@@ -25,6 +26,10 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::view('gerant/register', 'auth.gerant-register')->name('gerant.register');
+
+Route::post('gerant/register', [GerantRegisterController::class, 'gerantRegister'])->name('ger.register');
 
 // SECTION DES FORMATIONS :
 Route::get('/formations/ma-formation', [FormationController::class, 'maformation'])->name('ma.formation');

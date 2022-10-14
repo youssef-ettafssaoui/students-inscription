@@ -17,7 +17,7 @@ class CreateFormationsTable extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('gerant_id');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('title');
             $table->string('slug');
             $table->text('description');
@@ -25,7 +25,7 @@ class CreateFormationsTable extends Migration
             $table->string('type');
             $table->integer('status');
             $table->date('last_date');
-            $table->date('masse_horraire');
+            $table->string('masse_horraire');
             $table->integer('categorie_id');
             $table->timestamps();
         });
