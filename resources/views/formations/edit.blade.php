@@ -8,7 +8,7 @@
                     <i class="ik ik-plus-circle bg-primary"></i>
                     <div class="d-inline">
                         <h5>Formations</h5>
-                        <span>Création</span>
+                        <span>Modification</span>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('job.update', [$formation->id]) }}" method="POST">
+                    <form action="{{ route('formation.update', [$formation->id]) }}" method="POST">
                         @csrf
 
                         <div class="row">

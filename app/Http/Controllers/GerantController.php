@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\Gerant;
+use App\Models\Gerant;
 use App\Models\Formation;
 use Illuminate\Http\Request;
 
@@ -31,12 +31,33 @@ class GerantController extends Controller
         $user_id = auth()->user()->id;
 
         Gerant::where('user_id', $user_id)->update([
+            'position' => request('position'),
             'address' => request('address'),
             'phone' => request('phone'),
-            'website' => request('website'),
-            'slogan' => request('slogan'),
-            'description' => request('description')
+            'education' => request('education'),
+            'work' => request('work'),
+            'origin' => request('origin'),
+            'faceboock' => request('faceboock'),
+            'instagram' => request('instagram'),
+            'linkedIn' => request('linkedIn'),
+            'youtube' => request('youtube'),
         ]);
         return redirect()->back()->with('message', 'Informations du Gérant mises à jour avec succès !');
+    }
+
+    public function gerantLogo(Request $request)
+    {
+        $user_id = auth()->user()->id;
+        if ($request->hasfile('gerant_logo')) {
+
+            $file = $request->file('gerant_logo');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $ext;
+            $file->move('uploads/logo/', $filename);
+            Gerant::where('user_id', $user_id)->update([
+                'logo' => $filename
+            ]);
+        }
+        return redirect()->back()->with('message', 'Logo du Gérant Mis à jour avec succès !');
     }
 }

@@ -15,6 +15,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front/plugins/OwlCarousel2-2.2.1/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/responsive.css') }}">
+
+    <link href="{{ asset('front/plugins/video-js/video-js.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/instructors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/instructors_responsive.css') }}">
 </head>
 
 <body>
@@ -40,12 +44,33 @@
                                         <div class="top_bar_social">
                                             <span class="top_bar_title social_title"></span>
                                             <ul>
-                                                <li><a href="login"><i class="fa fa-sign-in" aria-hidden="true"></i>
-                                                        S'IDENTIFIER</a></li>
-                                                <li><a href="/register"><i class="fa fa-users"
-                                                            aria-hidden="true"></i>ESPACE ETUDIANTS</a></li>
-                                                <li><a href="{{ route('gerant.register') }}"><i class="fa fa-user"
-                                                            aria-hidden="true"></i>ESPACE GÉRANTS</a></li>
+                                                @if (!Auth::check())
+                                                    <li><a href="login"><i class="fa fa-sign-in"
+                                                                aria-hidden="true"></i>
+                                                            S'IDENTIFIER</a></li>
+                                                    <li><a href="/register"><i class="fa fa-users"
+                                                                aria-hidden="true"></i>ESPACE ETUDIANTS</a></li>
+                                                    <li><a href="{{ route('gerant.register') }}"><i class="fa fa-user"
+                                                                aria-hidden="true"></i>ESPACE GÉRANTS</a></li>
+                                                @else
+                                                    <li>
+                                                        <a href="{{ route('home') }}"><i class="fa fa-home"
+                                                                aria-hidden="true"></i>DASHBOARD</a>
+                                                    </li> |
+                                                    <li>
+                                                        <a href="{{ route('logout') }}"
+                                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                            <i class="fa fa-sign-out"
+                                                                aria-hidden="true"></i>DÉCONNECTION
+                                                        </a>
+
+                                                        <form id="logout-form" action="{{ route('logout') }}"
+                                                            method="POST" style="display: none;">
+                                                            @csrf
+                                                        </form>
+                                                    </li>
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -71,7 +96,7 @@
                                     <ul class="main_nav">
                                         <li class="active"><a href="/">ACCUEIL</a></li>
                                         <li><a href="/formations">NOS FORMATIONS</a></li>
-                                        <li><a href="instructors.html">GÉRANTS</a></li>
+                                        <li><a href="/gerants">GÉRANTS</a></li>
                                         <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
                                     </ul>
                                 </nav>
@@ -104,3 +129,41 @@
             </div>
 
         </header>
+
+        <!-- Menu -->
+
+        <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+            <div class="menu_close_container">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="search">
+                <form action="#" class="header_search_form menu_mm">
+                    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+                    <button
+                        class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="/">ACCUEIL</a></li>
+                    <li class="menu_mm"><a href="/formations">NOS FORMATIONS</a></li>
+                    <li class="menu_mm"><a href="/gerants">GÉRANTS</a></li>
+                    <li class="menu_mm"><a href="contact.html">CONTACTEZ-NOUS</a></li>
+                </ul>
+            </nav>
+            <div class="menu_extra">
+                <div class="menu_phone"><span class="menu_title">Téléphone:</span>(+212) 524 43 34 04</div>
+                <div class="menu_social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>

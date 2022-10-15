@@ -34,7 +34,7 @@ class FormationController extends Controller
     {
         $data = [];
 
-        $formationsBasedOnCategories = Formation::latest()->where('category_id', $formation->category_id)
+        $formationsBasedOnCategories = Formation::latest()->where('categorie_id', $formation->categorie_id)
             ->whereDate('last_date', '>', date('Y-m-d'))
             ->where('id', '!=', $formation->id)
             ->where('status', 1)
@@ -137,11 +137,11 @@ class FormationController extends Controller
         }
         $keyword = $request->get('title');
         $type = $request->get('type');
-        $category = $request->get('category_id');
+        $category = $request->get('categorie_id');
         if ($keyword || $type || $category) {
             $formations = Formation::where('title', 'LIKE', '%' . $keyword . '%')
                 ->orWhere('type', $type)
-                ->orWhere('category_id', $category)
+                ->orWhere('categorie_id', $category)
                 ->paginate(20);
             return view('formations.allformations', compact('formations'));
         } else {

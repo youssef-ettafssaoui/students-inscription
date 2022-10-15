@@ -32,15 +32,9 @@ Route::view('gerant/register', 'auth.gerant-register')->name('gerant.register');
 Route::post('gerant/register', [GerantRegisterController::class, 'gerantRegister'])->name('ger.register');
 
 // SECTION DES FORMATIONS :
-Route::get('/formations/ma-formation', [FormationController::class, 'maformation'])->name('ma.formation');
-
-Route::get('/formations/applications', [FormationController::class, 'applicant'])->name('applicant');
-
 Route::get('/formations/allformations', [FormationController::class, 'allFormations'])->name('allformations');
 
 Route::get('/', [FormationController::class, 'index']);
-
-Route::get('/formations/{id}/{formation}', [FormationController::class, 'show'])->name('formations.show');
 
 // SECTION DES GERANTS :
 Route::get('/gerant/{id}/{gerant}', [GerantController::class, 'index'])->name('gerant.index');
@@ -72,6 +66,8 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth', 'gerant']], function () {
+    Route::get('/formations/{id}/{formation}', [FormationController::class, 'show'])->name('formations.show');
+
     Route::get('/formations/create', [FormationController::class, 'create'])->name('formation.create');
 
     Route::post('/formations/create', [FormationController::class, 'store'])->name('formation.store');
@@ -79,7 +75,12 @@ Route::group(['middleware' => ['auth', 'gerant']], function () {
     Route::get('/formations/{id}/edit', [FormationController::class, 'edit'])->name('formation.edit');
 
     Route::post('/formations/{id}/edit', [FormationController::class, 'update'])->name('formation.update');
+
+    Route::get('/formations/ma-formation', [FormationController::class, 'maformation'])->name('ma.formation');
+
+    Route::get('/formations/applications', [FormationController::class, 'applicant'])->name('applicant');
 });
+
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::resource('categorie', CategorieController::class);
     Route::get('/posts', [DashboardController::class, 'index'])->name('post.index');

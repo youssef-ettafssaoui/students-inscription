@@ -27,8 +27,8 @@ class GerantRegisterController extends Controller
         Gerant::create([
             'user_id' => $user->id,
             'gname' => request('gname'),
-            'slug' => str_slug(request('cname'))
+            'slug' => str_slug(request('gname'))
         ]);
-        return redirect()->back()->with('message', 'Veuillez vérifier votre e-mail en cliquant sur le lien envoyé à votre adresse e-mail');
+        return redirect()->route('login')->with('message', 'Nous avons crée votre Compte Gérant avec succès !');
     }
 }

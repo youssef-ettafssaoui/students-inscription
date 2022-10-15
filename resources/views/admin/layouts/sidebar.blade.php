@@ -20,6 +20,10 @@
                         <a href="{{ url('dashboard') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                     </div>
 
+                    <div class="nav-item active">
+                        <a href="/"><i class="ik ik-home"></i><span>Accueil</span></a>
+                    </div>
+
                     @if (auth()->check() && auth()->user()->role->name === 'admin')
                         <div class="nav-item has-sub">
                             <a href="javascript:void(0)"><i class="ik ik-settings"></i><span>Paramètres
