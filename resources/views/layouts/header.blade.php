@@ -15,10 +15,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front/plugins/OwlCarousel2-2.2.1/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/main_styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/courses.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/courses_responsive.css') }}">
 
     <link href="{{ asset('front/plugins/video-js/video-js.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/instructors.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/instructors_responsive.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/course.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/course_responsive.css') }}">
 </head>
 
 <body>
@@ -45,7 +49,7 @@
                                             <span class="top_bar_title social_title"></span>
                                             <ul>
                                                 @if (!Auth::check())
-                                                    <li><a href="login"><i class="fa fa-sign-in"
+                                                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"
                                                                 aria-hidden="true"></i>
                                                             S'IDENTIFIER</a></li>
                                                     <li><a href="/register"><i class="fa fa-users"

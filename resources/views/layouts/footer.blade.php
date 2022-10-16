@@ -104,11 +104,13 @@
 <script src="{{ asset('front/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
 <script src="{{ asset('front/plugins/easing/easing.js') }}"></script>
 <script src="{{ asset('front/js/custom.js') }}"></script>
+<script src="{{ asset('front/js/courses.js') }}"></script>
 <script src="{{ asset('front/plugins/parallax-js-master/parallax.min.js') }}"></script>
 <script src="{{ asset('front/plugins/progressbar/progressbar.min.js') }}"></script>
 <script src="{{ asset('front/plugins/video-js/video.min.js') }}"></script>
 <script src="{{ asset('front/plugins/video-js/Youtube.min.js') }}"></script>
 <script src="{{ asset('front/js/instructors.js') }}"></script>
+<script src="{{ asset('front/js/course.js') }}"></script>
 </body>
 
 </html>

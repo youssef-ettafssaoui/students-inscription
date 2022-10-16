@@ -20,14 +20,27 @@
                         </div>
                         <div class="card-body text-center">
                             @if (empty(Auth::user()->gerant->logo))
-                                <img src="{{ asset('back/img/avatars/avatar-4.jpg') }}" alt="Christina Mason"
-                                    class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                                <p class="badge badge-danger"><i class="fa fa-info"></i> &nbsp;Veuillez importer votre Image
+                                    Personnelle
+                                </p>
                             @else
                                 <img src="{{ asset('uploads/logo') }}/{{ Auth::user()->gerant->logo }}"
                                     class="img-fluid rounded-circle mb-2" width="128" height="128" />
                             @endif
                             <h5 class="card-title mb-0">{{ Auth::user()->gerant->gname }}</h5>
-                            <div class="text-muted mb-2">{{ Auth::user()->gerant->position }}</div>
+
+                            <div class="text-muted mb-2">
+                                @if (empty(Auth::user()->gerant->position))
+                                    <p class="badge badge-danger"><i class="fa fa-info"></i> &nbsp;Veuillez spécifier votre
+                                        Position actuelle</p>
+                                @else
+                                    {{ Auth::user()->gerant->position }}
+                                @endif
+
+
+
+
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="row">
