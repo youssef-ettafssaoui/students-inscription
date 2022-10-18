@@ -27,11 +27,17 @@
                                 <div class="course_footer d-flex flex-row align-items-center justify-content-start">
                                     <div class="course_info">
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-calendar"></i>
-                                                    {{ $formation->created_at->diffForHumans() }}</a></li>
                                             <li>
-                                                <span class="badge badge-primary">
-                                                    {{ strtoupper($formation->type) }}</span>
+                                                <i class="fa fa-clock-o"
+                                                    aria-hidden="true"></i><span>&nbsp;&nbsp;{{ $formation->masse_horraire }}
+                                                    Heures</span>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-calendar"
+                                                    aria-hidden="true"></i><span>&nbsp;&nbsp;{{ $formation->created_at->diffForHumans() }}</span>
+                                            </li>
+                                            <li>
+                                                <a href="#">{{ $formation->type }}</a>
                                             </li>
 
                                         </ul>
