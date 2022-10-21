@@ -10,7 +10,9 @@ class CategoryController extends Controller
 {
     public function index($id)
     {
-        $formations = Formation::where('categorie_id', $id)->paginate(20);
+        $formations = Formation::where('categorie_id', $id)
+            ->where('status', 1)
+            ->paginate(20);
         $categoryName = Categorie::where('id', $id)->first();
         return view('formations.formations-category', compact('formations', 'categoryName'));
     }

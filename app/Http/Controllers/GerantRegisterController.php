@@ -12,7 +12,6 @@ class GerantRegisterController extends Controller
 {
     public function gerantRegister(Request $request)
     {
-
         $this->validate($request, [
             'gname' => 'required|string|max:60',
             'email' => 'required|string|email|max:255|unique:users',

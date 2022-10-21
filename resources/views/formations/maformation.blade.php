@@ -18,13 +18,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-primary text-white"><b>Mes Formations</b></div>
-
                 <div class="card-body">
-
                     <table class="table">
-
                         <tbody>
-
                             @foreach ($formations as $formation)
                                 <tr>
                                     <td>

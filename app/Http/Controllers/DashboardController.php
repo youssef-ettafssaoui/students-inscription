@@ -116,7 +116,7 @@ class DashboardController extends Controller
         return view('admin.formation', compact('formations'));
     }
 
-    public function changeJobStatus($id)
+    public function changeFormationStatus($id)
     {
         $formation = Formation::find($id);
         $formation->status = !$formation->status;

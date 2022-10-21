@@ -61,6 +61,13 @@
                         </div>
                     @endif
 
+                    @if (auth()->check() && auth()->user()->role->name === 'admin')
+                        <div class="nav-item">
+                            <a href="{{ route('getAllFormations') }}"><i class="ik ik-book"></i><span>Formations</span>
+                                <span class="badge badge-danger"></span></a>
+                        </div>
+                    @endif
+
                     @if (auth()->check() && auth()->user()->role->name === 'gerant')
                         <div class="nav-item">
                             <a href="{{ route('gerant.view') }}"><i class="ik ik-user"></i><span>Espace Gernat</span>

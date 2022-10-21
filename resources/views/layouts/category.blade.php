@@ -17,7 +17,7 @@
                                                  <img src="{{ asset('front/images/fstg11.jpg') }}" alt="">
                                              </div>
                                              <div class="blog_category_title">{{ $category->name }}
-                                                 ({{ $category->formations->count() }})
+                                                 ({{ $category->formations->where('status', 1)->count() }})
                                              </div>
                                          </div>
                                      </a>

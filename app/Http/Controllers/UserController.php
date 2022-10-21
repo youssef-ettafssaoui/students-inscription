@@ -15,12 +15,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-
             'address' => 'required',
             'cin' => 'required|min:8',
             'cne' => 'required|min:10',
             'bio' => 'required|min:20',
-            'experience' => 'required|min:20',
             'phone_number' => 'required|min:10|numeric'
         ]);
 

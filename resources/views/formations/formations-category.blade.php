@@ -29,15 +29,12 @@
                                         <ul>
                                             <li>
                                                 <i class="fa fa-clock-o"
-                                                    aria-hidden="true"></i><span>&nbsp;&nbsp;{{ $formation->masse_horraire }}
+                                                    aria-hidden="true"></i><span>&nbsp;{{ $formation->masse_horraire }}
                                                     Heures</span>
                                             </li>
                                             <li>
-                                                <i class="fa fa-calendar"
-                                                    aria-hidden="true"></i><span>&nbsp;&nbsp;{{ $formation->created_at->diffForHumans() }}</span>
-                                            </li>
-                                            <li>
-                                                <a href="#">{{ $formation->type }}</a>
+                                                <a href="#"
+                                                    class="badge badge-primary text-white">{{ $formation->type }}</a>
                                             </li>
 
                                         </ul>

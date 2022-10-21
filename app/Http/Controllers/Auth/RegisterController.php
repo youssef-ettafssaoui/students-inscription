@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Etudiant;
 use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -55,6 +56,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'cin' => ['required', 'max:9', 'unique:etudiants'],
+            'cne' => ['required', 'max:10', 'unique:etudiants']
         ]);
     }
 
@@ -66,12 +69,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $role = Role::where('name', 'admin')->first();
-        return User::create([
+        $role = Role::where('name', 'etudiant')->first();
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'role_id' => $role->id,
             'password' => Hash::make($data['password']),
         ]);
+        Etudiant::create([
+            'user_id' => $user->id,
+            'gender' => request('gender'),
+            'dob' => request('dob')
+        ]);
+        return $user;
     }
 }

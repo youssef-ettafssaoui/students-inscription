@@ -62,7 +62,7 @@
             <div class="row row-lg-eq-height">
 
                 <!-- Panels -->
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                     <div class="tab_panels">
 
                         <!-- Tabs -->
@@ -197,7 +197,7 @@
                 </div>
 
                 <!-- Sidebar -->
-                <div class="col-lg-5">
+                <div class="col-lg-6" id="app">
                     <div class="sidebar">
                         <div class="sidebar_background"></div>
                         <div class="sidebar_top"></div>

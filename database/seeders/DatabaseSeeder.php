@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Categorie;
+use App\Models\Formation;
+use App\Models\Gerant;
 use App\Models\User;
 use App\Models\Role;
 
@@ -17,6 +19,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Categorie::truncate();
+        User::factory(10)->create();
+        Gerant::factory(15)->create();
+        Formation::factory(25)->create();
 
         $categories = [
             'Informatique',

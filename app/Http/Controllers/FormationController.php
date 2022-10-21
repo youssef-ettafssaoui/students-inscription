@@ -16,7 +16,7 @@ class FormationController extends Controller
 
     public function index()
     {
-        $formations = Formation::latest()->limit(10)->where('status', 1)->get();
+        $formations = Formation::latest()->limit(6)->where('status', 1)->get();
         $categories = Categorie::with('formations')->get();
         $posts = Post::where('status', 1)->get();
         $testimonial = Testimonial::orderBy('id', 'DESC')->first();

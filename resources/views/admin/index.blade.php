@@ -8,8 +8,8 @@
                 <div class="page-header-title">
                     <i class="ik ik-home bg-primary"></i>
                     <div class="d-inline">
-                        <h5>Catégories</h5>
-                        <span>Liste de tous les Catégories</span>
+                        <h5>Publications</h5>
+                        <span>Liste des Publications</span>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                             <a href="../index.html"><i class="ik ik-home"></i></a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('categorie.index') }}">Département</a>
+                            <a href="{{ route('categorie.index') }}">Publications</a>
                         </li>
                     </ol>
                 </nav>
@@ -46,7 +46,6 @@
                                 <th scope="col">Titre</th>
                                 <th scope="col">Contenu</th>
                                 <th scope="col">Statut</th>
-                                <th>Date</th>
                                 <th class="nosort"></th>
                                 <th class="nosort"></th>
                             </tr>
@@ -69,17 +68,16 @@
                                                     class="badge badge-success"> Activé</a>
                                             @endif
                                         </td>
-                                        <td>{{ $post->created_at->diffForHumans() }}</td>
-
                                         <td>
                                             <div class="table-actions">
                                                 <center>
                                                     <a href="{{ route('post.edit', [$post->id]) }}"><button
-                                                            class="btn btn-warning">Modifier</button></a>
+                                                            class="btn btn-warning btn-sm text-center"><i
+                                                                class="fa fa-pen"></i></button></a>
                                                     <br> <br>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#exampleModal{{ $post->id }}">
-                                                        Supprimer
+                                                    <button type="button" class="btn btn-danger btn-sm text-center"
+                                                        data-toggle="modal" data-target="#exampleModal{{ $post->id }}">
+                                                        <i class="fa fa-trash"></i>
                                                     </button>
                                                 </center>
 

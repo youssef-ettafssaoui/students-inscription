@@ -22,6 +22,31 @@
                                 </span>
                             @enderror
                         </div>
+
+                        <div class="form-group">
+                            <label for="cin"><i class="zmdi zmdi-accounts-alt material-icons-name"></i></label>
+                            <input id="cin" type="text" class="form-control @error('cin') is-invalid @enderror"
+                                name="cin" value="{{ old('cin') }}" required autocomplete="cin" autofocus
+                                placeholder="Veuillez saisir votre CIN" />
+                            @error('cin')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cne"><i class="zmdi zmdi-account-box material-icons-name"></i></label>
+                            <input id="cne" type="text" class="form-control @error('cne') is-invalid @enderror"
+                                name="cne" value="{{ old('cne') }}" required autocomplete="cne" autofocus
+                                placeholder="Veuillez saisir votre CNE" />
+                            @error('cne')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-email"></i></label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -48,6 +73,11 @@
                             <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
                                 required autocomplete="new-password" placeholder="Veuillez Confirmer votre Mot de Passe" />
+                        </div>
+                        <div class="form-group">
+                            <label for="dob"><i class="zmdi zmdi-calendar"></i></label>
+                            <input type="date" id="datepicker" class="form-control @error('dob') is-invalid @enderror"
+                                name="dob" value="{{ old('dob') }}">
                         </div>
                         <div class="form-group form-button">
                             <input type="submit" name="signup" id="signup" class="form-submit" value="S'INSCRIRE" />

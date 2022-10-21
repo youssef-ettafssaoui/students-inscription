@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/instructors_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/course.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/course_responsive.css') }}">
+    <script defer src="{{ asset('js/app.js') }}"></script>
 </head>
 
 <body>
@@ -155,7 +156,7 @@
             <nav class="menu_nav">
                 <ul class="menu_mm">
                     <li class="menu_mm"><a href="/">ACCUEIL</a></li>
-                    <li class="menu_mm"><a href="/formations">NOS FORMATIONS</a></li>
+                    <li class="menu_mm"><a href="/allformations">NOS FORMATIONS</a></li>
                     <li class="menu_mm"><a href="/gerants">GÉRANTS</a></li>
                     <li class="menu_mm"><a href="contact.html">CONTACTEZ-NOUS</a></li>
                 </ul>
