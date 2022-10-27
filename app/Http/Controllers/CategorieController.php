@@ -37,7 +37,8 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'icon' => 'required',
         ]);
         Categorie::create($request->all());
         return redirect()->route('categorie.index')->with('message', 'Categorie crée avec succès !');
@@ -76,10 +77,12 @@ class CategorieController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'icon' => 'required'
         ]);
         $categorie = Categorie::find($id);
         $categorie->name = $request->name;
+        $categorie->icon = $request->icon;
         $categorie->save();
         return redirect()->route('categorie.index')->with('message', 'Catégorie mise à jour avec Succès !');
     }

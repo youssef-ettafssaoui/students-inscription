@@ -19,7 +19,7 @@ class UserFactory extends Factory
 
     public function definition()
     {
-        $role = Role::where('name', 'etudiant')->first();
+        $role = Role::where('name', 'admin')->first();
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),

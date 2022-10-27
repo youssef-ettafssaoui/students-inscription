@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+@php
+    $setting = App\Models\SiteSetting::find(1);
+    $seo = App\Models\Seo::find(1);
+@endphp
 
 <head>
-    <title>Lingua</title>
+    <title>{{ $seo->meta_title }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Lingua project">
@@ -23,6 +27,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/instructors_responsive.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/course.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/course_responsive.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/blog.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/blog_responsive.css') }}">
     <script defer src="{{ asset('js/app.js') }}"></script>
 </head>
 
@@ -41,8 +48,12 @@
                         <div class="row">
                             <div class="col">
                                 <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
-                                    <div class="top_bar_phone"><span class="top_bar_title">phone :</span>+44 300 303
-                                        0266
+                                    <div class="top_bar_phone">
+                                        <span class="top_bar_title"><i class="fa fa-phone"></i> Téléphone :
+                                            {{ $setting->phone_one }}
+                                        </span>
+                                        <span class="top_bar_title"><i class="fa fa-fax"></i> Fax :
+                                            {{ $setting->phone_two }}</span>
                                     </div>
                                     <div class="top_bar_right ml-auto">
                                         <!-- Social -->
@@ -94,13 +105,13 @@
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo_container mr-auto">
                                     <a href="#">
-                                        <div class="logo_text">IRISI</div>
+                                        <div class="logo_text">{{ $setting->ecole_name }}</div>
                                     </a>
                                 </div>
                                 <nav class="main_nav_contaner">
                                     <ul class="main_nav">
                                         <li class="active"><a href="/">ACCUEIL</a></li>
-                                        <li><a href="/formations">NOS FORMATIONS</a></li>
+                                        <li><a href="/formations/allformations">NOS FORMATIONS</a></li>
                                         <li><a href="/gerants">GÉRANTS</a></li>
                                         <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
                                     </ul>
@@ -108,9 +119,12 @@
                                 <div class="header_content_right ml-auto text-right">
                                     <div class="header_search">
                                         <div class="search_form_container">
-                                            <form action="#" id="search_form" class="search_form trans_400">
-                                                <input type="search" class="header_search_input trans_400"
-                                                    placeholder="Type for Search" required="required">
+                                            <form action="{{ route('allformations') }}" id="search_form"
+                                                class="search_form trans_400">
+
+                                                <input type="search" name="search"
+                                                    class="input-group form_input trans_400 header_search_input"
+                                                    placeholder="Chercher Formations" required="required">
                                                 <div class="search_button">
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </div>
@@ -162,12 +176,24 @@
                 </ul>
             </nav>
             <div class="menu_extra">
-                <div class="menu_phone"><span class="menu_title">Téléphone:</span>(+212) 524 43 34 04</div>
+                <div class="menu_phone"><span class="menu_title">Téléphone : {{ $setting->phone_one }}</span></div>
                 <div class="menu_social">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li>
+                            <a href="{{ $setting->facebook }}">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ $setting->youtube }}">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ $setting->linkedin }}">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

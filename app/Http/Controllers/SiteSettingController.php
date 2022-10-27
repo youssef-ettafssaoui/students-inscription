@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Seo;
 use App\Models\SiteSetting;
 use Illuminate\Http\Request;
+use Image;
 
 class SiteSettingController extends Controller
 {
@@ -21,7 +22,7 @@ class SiteSettingController extends Controller
         if ($request->file('logo')) {
             $image = $request->file('logo');
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(139, 36)->save('upload/logo/' . $name_gen);
+            Image::make($image)->resize(400, 400)->save('uploads/logo/' . $name_gen);
             $save_url = 'upload/logo/' . $name_gen;
 
             SiteSetting::findOrFail($setting_id)->update([

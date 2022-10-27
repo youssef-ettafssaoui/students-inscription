@@ -1,14 +1,13 @@
  <!-- Home -->
- <br><br><br>
+ <br><br><br><br><br><br><br><br>
  <div class="home">
-     <div class="home_background" style="background-image: url(images/index_background.jpg);"></div>
+     <div class="home_background" style="background-image: url(front/images/index_background.jpg);"></div>
      <div class="home_content">
          <div class="container">
              <div class="row">
                  <div class="col text-center">
-                     <h1 class="home_title">Commençons notre apprentissage !</h1>
-                     <p>La Faculté des Sciences et Techniques de Marrakech propose cette solution innovante pour
-                         développer les compétences professionnelles dont elle a besoin.</p>
+                     <h1 class="home_title">Plateforme d'Inscription</h1>
+                     <div class="home_button trans_200"><a href="/formations/allformations">commencer</a></div>
                  </div>
              </div>
          </div>

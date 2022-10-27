@@ -82,6 +82,7 @@ Route::get('/formations/applications', [FormationController::class, 'applicant']
 
 
 Route::resource('categorie', CategorieController::class);
+
 Route::get('/posts', [DashboardController::class, 'index'])->name('post.index');
 
 Route::get('/posts/create', [DashboardController::class, 'create'])->name('post.create');

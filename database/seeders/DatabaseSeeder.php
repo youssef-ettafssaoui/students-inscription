@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Categorie::truncate();
-        User::factory(10)->create();
-        Gerant::factory(15)->create();
-        Formation::factory(25)->create();
+        // User::factory(15)->create();
+        // Gerant::factory(15)->create();
+        // Formation::factory(25)->create();
 
         $categories = [
             'Informatique',

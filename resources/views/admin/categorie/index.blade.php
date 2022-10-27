@@ -20,7 +20,7 @@
                             <a href="../index.html"><i class="ik ik-home"></i></a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('categorie.index') }}">Département</a>
+                            <a href="{{ route('categorie.index') }}">Catégorie</a>
                         </li>
                     </ol>
                 </nav>
@@ -43,6 +43,7 @@
                         <thead>
                             <tr>
                                 <th>SN</th>
+                                <th>Icon</th>
                                 <th>Catégories</th>
                                 <th class="nosort"></th>
                                 <th class="nosort"></th>
@@ -53,6 +54,7 @@
                                 @foreach ($categories as $key => $categorie)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
+                                        <td><span><i class="{{ $categorie->icon }}"></i></span></td>
                                         <td><b>{{ $categorie->name }}</b></td>
 
                                         <td>
@@ -61,21 +63,9 @@
                                                     <a href="{{ route('categorie.edit', [$categorie->id]) }}"><i
                                                             class="ik ik-edit-2 text-primary"></i></a>
                                                 </center>
-
-
-                                                {{--
-                                                <form action="{{ route('categorie.destroy', [$categorie->id]) }}"
-                                                    method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <a type="submit"><i class="ik ik-trash-2 text-danger">
-                                                        </i></a>
-
-                                                </form> --}}
-
                                             </div>
                                         </td>
-                                        <td>x</td>
+                                        < <td>x</td>
                                     </tr>
                                 @endforeach
                             @else
