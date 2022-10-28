@@ -23,7 +23,7 @@ class SiteSettingController extends Controller
             $image = $request->file('logo');
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             Image::make($image)->resize(400, 400)->save('uploads/logo/' . $name_gen);
-            $save_url = 'upload/logo/' . $name_gen;
+            $save_url = 'uploads/logo/' . $name_gen;
 
             SiteSetting::findOrFail($setting_id)->update([
                 'phone_one' => $request->phone_one,
