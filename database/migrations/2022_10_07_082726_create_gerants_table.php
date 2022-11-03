@@ -17,6 +17,7 @@ class CreateGerantsTable extends Migration
             $table->bigIncrements('id');
             $table->string('logo')->nullable();
             $table->integer('user_id');
+            $table->integer('etablissement_id');
             $table->string('gname');
             $table->string('slug');
             $table->string('position')->nullable();

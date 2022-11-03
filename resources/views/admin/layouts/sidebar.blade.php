@@ -38,6 +38,18 @@
 
                     @if (auth()->check() && auth()->user()->role->name === 'admin')
                         <div class="nav-item has-sub">
+                            <a href="javascript:void(0)"><i class="ik ik-database"></i><span>Etablissement</span> <span
+                                    class="badge badge-danger"></span></a>
+                            <div class="submenu-content">
+                                <a href="{{ route('etablissement.create') }}" class="menu-item">Créer</a>
+                                <a href="{{ route('etablissement.index') }}" class="menu-item">Consulter</a>
+
+                            </div>
+                        </div>
+                    @endif
+
+                    @if (auth()->check() && auth()->user()->role->name === 'admin')
+                        <div class="nav-item has-sub">
                             <a href="javascript:void(0)"><i class="ik ik-home"></i><span>Categories</span> <span
                                     class="badge badge-danger"></span></a>
                             <div class="submenu-content">

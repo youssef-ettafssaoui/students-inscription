@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EtablissementController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\GerantController;
 use App\Http\Controllers\GerantRegisterController;
@@ -82,6 +83,8 @@ Route::get('/formations/applications', [FormationController::class, 'applicant']
 
 
 Route::resource('categorie', CategorieController::class);
+
+Route::resource('etablissement', EtablissementController::class);
 
 Route::get('/posts', [DashboardController::class, 'index'])->name('post.index');
 

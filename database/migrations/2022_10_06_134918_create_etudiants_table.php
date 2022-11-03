@@ -23,6 +23,7 @@ class CreateEtudiantsTable extends Migration
             $table->string('gender')->nullable();
             $table->string('dob')->nullable();
             $table->string('bio')->nullable();
+            $table->string('resume');
             $table->string('avatar')->nullable();
             $table->timestamps();
         });

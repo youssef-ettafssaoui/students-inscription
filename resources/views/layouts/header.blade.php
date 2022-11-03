@@ -104,16 +104,18 @@
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo_container mr-auto">
-                                    <a href="#">
-                                        <div class="logo_text">{{ $setting->ecole_name }}</div>
-                                    </a>
+                                    <center>
+                                        <a href="/">
+                                            <h6>{{ $setting->ecole_name }}</h6>
+                                        </a>
+                                    </center>
                                 </div>
                                 <nav class="main_nav_contaner">
                                     <ul class="main_nav">
                                         <li class="active"><a href="/">ACCUEIL</a></li>
                                         <li><a href="/formations/allformations">NOS FORMATIONS</a></li>
                                         <li><a href="/gerants">GÉRANTS</a></li>
-                                        <li><a href="contact.html">CONTACTEZ-NOUS</a></li>
+                                        <li><a href="/">CONTACTEZ-NOUS</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_content_right ml-auto text-right">
