@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <form action="{{ route('formation.update', [$formation->id]) }}" method="POST">
                         @csrf
-
+                        @method('PUT')
                         <div class="row">
 
                             <div class="col-md-6">

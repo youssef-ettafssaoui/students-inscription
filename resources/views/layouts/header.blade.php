@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/blog.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/styles/blog_responsive.css') }}">
     <script defer src="{{ asset('js/app.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" />
 </head>
 
 <body>
@@ -200,3 +201,18 @@
                 </div>
             </div>
         </div>
+
+        <style>
+            body {
+                font-family: "Open Sans Condensed";
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(4, 0, 119);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+        </style>

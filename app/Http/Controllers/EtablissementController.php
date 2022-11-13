@@ -45,7 +45,17 @@ class EtablissementController extends Controller
             'phone' => 'required|string|max:18',
             'description' => 'required|max:800'
         ]);
-        Etablissement::create($request->all());
+        Etablissement::create([
+            'etablissement' => request('etablissement'),
+            'slug' => str_slug(request('etablissement')),
+            'email' => request('email'),
+            'address' => request('address'),
+            'ville' => request('ville'),
+            'website' => request('website'),
+            'slogan' => request('slogan'),
+            'phone' => request('phone'),
+            'description' => request('description')
+        ]);
         return redirect()->route('etablissement.index')->with('message', 'Etablissement crée avec succès !');
     }
 
@@ -68,7 +78,7 @@ class EtablissementController extends Controller
      */
     public function edit($id)
     {
-        $etablissement = Etablissement::find($id);
+        $etablissement = Etablissement::findOrFail($id);
         return view('admin.etablissements.edit', compact('etablissement'));
     }
 
@@ -81,7 +91,9 @@ class EtablissementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $etablissement = Etablissement::findOrFail($id);
+        $etablissement->update($request->all());
+        return redirect()->route('etablissement.index')->with('message', 'Informations Etablissemet mises à jour avec succès !');
     }
 
     /**

@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset('back/plugins/owl.carousel/dist/assets/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('back/dist/css/theme.min.css') }}">
     <script src="{{ asset('back/src/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" />
 </head>
 
 <body>
@@ -161,3 +162,15 @@
                 </div>
             </div>
         </header>
+
+        <style>
+            body {
+                font-family: "Open Sans Condensed";
+                font-size: 14px;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(4, 0, 119);
+            }
+        </style>
