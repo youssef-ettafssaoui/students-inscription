@@ -23,11 +23,21 @@ class GerantRegisterController extends Controller
             'password' => Hash::make(request('password')),
             'role_id' => $role->id,
         ]);
+
+
         Gerant::create([
             'user_id' => $user->id,
             'gname' => request('gname'),
-            'slug' => str_slug(request('gname'))
+            'slug' => str_slug(request('gname')),
+            'etablissement_id' => request('etablissement_id'),
+            'address' =>
+            request('address'),
+            'phone' =>
+            request('phone'),
+            'work' => request('work'),
+            'origin' => request('origin'),
+
         ]);
-        return redirect()->route('login')->with('message', 'Nous avons crée votre Compte Gérant avec succès !');
+        return redirect()->route('home')->with('message', 'Nous avons crée votre Compte Gérant avec succès !');
     }
 }

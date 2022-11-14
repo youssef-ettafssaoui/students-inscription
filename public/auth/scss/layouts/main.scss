@@ -1,256 +1,332 @@
-.signup {
-    margin-bottom: 150px;
+.signup-img {
+    position: relative;
+    width: 385px;
+    margin-bottom: -8px;
+}
+.signup-form {
+    width: 1015px;
+    margin-top: -2px;
+}
+.signup-img-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    text-align: center;
+    width: 100%;
 }
 .signup-content {
     @extend display-flex;
-    padding: 75px 0;
-    // flex-flow: wrap;
 }
-.signup-form, .signup-image, .signin-form, .signin-image{
-    width: 50%;
-    overflow: hidden;
+
+.register-form {
+    padding: 93px 115px 90px 80px;     
+    margin-bottom: -8px;
 }
-.signup-image {
-    margin: 0 55px;
+.form-row {
+    @extend display-flex;
+    margin: 0 -30px;
+    .form-group {
+        width: 50%;
+        padding: 0 30px;
+    }
 }
-.form-title {
-    margin-bottom: 33px;
+.form-input, .form-select, .form-radio {
+    margin-bottom: 23px;
 }
-.signup-image {
-    margin-top: 45px;
+label, input {
+    display: block;
+    width: 100%;
 }
-figure {
-    margin-bottom: 50px;
-    text-align: center;
+label {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+label.required {
+    position: relative;
+    &:after {
+        content: '*';
+        margin-left: 2px;
+        color: #b90000;
+
+    }
+}
+input {
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    padding: 14px 20px;
+    @include border-radius(5px);
+    font-size: 14px;
+    font-family: 'Poppins';
+    &:focus {
+        border: 1px solid $green-color;
+    }
+}
+
+.label-flex {
+    @extend display-flex;
+    @include justify-content(space-between);
+    
+    label {
+        width: auto;
+    }
+}
+.form-link {
+    font-size: 12px;
+    color: $black-color;
+    text-decoration: none;
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #d7d7d7;
+        left: 0;
+        bottom: 12px;
+    }
+}
+
+.form-radio {
+    // @extend display-flex;
+    margin-bottom: 18px;
+    input {
+        width: auto;
+        display: inline-block;
+    }
+}
+.radio-label {
+    padding-right: 72px;
+}
+.form-radio-group {
+    @extend display-flex;
+    padding-bottom: 10px;
+    padding-top: 12px;
+}
+.form-radio-item {
+    position: relative;
+    margin-right: 30px;
+    label {
+        font-weight: 500;
+        padding-left: 30px;
+        position: relative;
+        z-index: 9;
+        display: block;
+        cursor: pointer;
+        text-transform: none;
+    }
+}
+
+.check{
+    display: inline-block;
+    position: absolute;
+    border: 1px solid $border-color;
+    @include border-radius(50%);
+    height: 18px;
+    width: 18px;
+    top: 2px;
+    left: 0px;
+      z-index: 5;
+      transition: border .25s linear;
+      -webkit-transition: border .25s linear;
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 12px;
+        height: 12px;
+        @include border-radius(50%);
+        top: 3px;
+        left: 3px;
+        margin: auto;
+        transition: background 0.25s linear;
+        -webkit-transition: background 0.25s linear;
+    }
+}
+input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    &:checked ~ .check {
+        border: 1px solid $green-color;
+    }
+    &:checked ~ .check::before {
+        background: $green-color;
+    }
+}
+ul { 
+    @extend list-type-ulli;
+    background: 0 0;
+    position: relative;
+    z-index: 9;
+    border: 1px solid $border-color;
+    @include border-radius(5px);
+}
+ul li { 
+    padding: 13px 20px;
+    z-index: 2;
+    color: $black-color;
+}
+ul li:not(.init) { 
+    display: none; 
+    background: #fff;
+    color: $black-color;
+    padding: 5px 10px; 
+}
+ul li:not(.init):hover, ul li.selected:not(.init) { 
+    background: $green-color;
+    color: #fff;
+}
+li.init { 
+    cursor: pointer;
+    position: relative;
+    &:after {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        @include transform(translateY(-50%));
+        font-size: 22px;
+        color: $black-color;
+        font-family: 'Material-Design-Iconic-Font';
+        content: '\f2f2';
+    }
+}
+
+#slider-margin {
+    height: 5px;
+    border: none;
+    @include box-shadow(none);
+    background: #f8f8f8;
+    @include border-radius(2.5px);
+    .noUi-connect {
+        background: $green-color;
+    }
+    .noUi-handle {
+        width: 100px;
+        height: 30px;
+        top: -12px;
+        background: $green-color;
+        @include box-shadow(0px 3px 2.85px 0.15px rgba(0, 0, 0, 0.1));
+        @include border-radius(5px);
+        outline: none;
+        border: none;
+        // left: 50%;
+        // @include transform(translateX(-50%));
+        // right: auto;
+        right: -50px;
+        &:after, &:before {
+            background: transparent;
+            height: 0px;
+            width: 20px;
+            top: -2px;
+            font-size: 18px;
+            outline: none;
+        }
+        &:before {
+            font-family: 'Material-Design-Iconic-Font';
+            color: #fff;
+            content: '\f2fa';
+            left: 10px;
+        }
+        &:after {
+            font-family: 'Material-Design-Iconic-Font';
+            color: #fff;
+            content: '\f2fb';
+            left: auto;
+            right: -5px;
+        }
+        .noUi-tooltip {
+            bottom: 2px;
+            border: none;
+            background: transparent;
+            font-weight: bold;
+            color: #fff;
+            padding: 0px;
+        }
+    }
+}
+.donate-us {
+    margin-bottom: 93px;
+    margin-top: 30px;
+    label {
+        margin-bottom: 32px;
+    }
+}
+.price_slider {
+    position: relative;
+}
+.donate-value {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    z-index: 99;
+    @include transform(translateX(-50%));
 }
 .form-submit {
+    text-align: right;
+}
+.submit {
+    width: 150px;
+    height: 50px;
     display: inline-block;
-    background: $blue-color;
-    color: #fff;
-    border-bottom: none;
-    width: auto;
-    padding: 15px 39px;
-    @include border-radius(5px);
-    margin-top: 25px;
-    cursor: pointer;
-    &:hover {
-        background: darken($blue-color, 10%);
-    }
-}
-
-#signin {
-    margin-top: 16px;
-}
-.signup-image-link {
-    font-size: 14px;
-    color: $black-color;
-    display: block;
-    text-align: center;
-}
-
-.term-service {
-    font-size: 13px;
-    color: $black-color;
-}
-.signup-form {
-    margin-left: 75px;
-    margin-right: 75px;
-    padding-left: 34px;
-}
-.register-form {
-    width: 100%;
-}
-.form-group {
-    position: relative;
-    margin-bottom: 25px;
-    overflow: hidden;
-    &:last-child {
-        margin-bottom: 0px;
-    }
-}
-
-input {
-    width: 100%;
-    display: block;
-    border: none;
-    border-bottom: 1px solid $grey-light;
-    padding: 6px 30px;
-    font-family: Poppins;
-    box-sizing: border-box;
-    @include input-placeholder($grey-light);
-    &:focus {
-        border-bottom: 1px solid $black-color;
-        @include input-placeholder($black-color);
-    }
-}
-
-input[type=checkbox]:not(old){
-  width     : 2em;
-  margin    : 0;
-  padding   : 0;
-  font-size : 1em;
-  display: none;
-}
-input[type=checkbox]:not(old) + label{
-    display      : inline-block;
-    line-height  : 1.5em;
-    margin-top: 6px;
-}
-input[type=checkbox]:not(old) + label > span{
-  display          : inline-block;
-  width            : 13px;
-  height           : 13px;
-  margin-right: 15px;
-  margin-bottom: 3px;
-  border           : 1px solid $grey-light;
-  @include border-radius(2px);
-  background       : rgb(255,255,255);
-  background-image :    -moz-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-  background-image :     -ms-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-  background-image :      -o-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-  background-image : -webkit-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-  background-image :         linear-gradient(rgb(255,255,255),rgb(255,255,255 ));
-  vertical-align   : bottom;
-}
-input[type=checkbox]:not(old):checked + label > span,{
-    background-image :    -moz-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-    background-image :     -ms-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-    background-image :      -o-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-    background-image : -webkit-linear-gradient(rgb(255,255,255),rgb(255,255,255));
-    background-image :         linear-gradient(rgb(255,255,255),rgb(255,255,255 ));
-}
-input[type=checkbox]:not(old):checked + label > span:before{
-    content     : '\f26b';
-    display     : block;
-    color       : $black-color;
-    font-size   : 11px;
-    line-height : 1.2;
-    text-align  : center;
-    font-family: 'Material-Design-Iconic-Font';
+    font-family: 'Poppins';
     font-weight: bold;
-  }
-.agree-term {
-    display: inline-block;
-    width: auto;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    @include border-radius(5px);
 }
-
-label {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    @include transform(translateY(-50%));
-    color: $black-color;
+#reset {
+    background: #fff;
+    color: #999;
+    
+    border: 2px solid $border-color;
+    &:hover {
+        border: 2px solid $green-color;
+        background: $green-color;
+        color: #fff;
+    }
 }
-.label-has-error {
-    top: 22%;
+#submit {
+    background: $green-color;
+    color: #fff;
+    margin-right: 25px;
+    &:hover {
+        background-color: darken($green-color, 10%)
+    }
+}
+.form-input {
+    position: relative;
 }
 label.error {
-    position: relative;
-    background: url('../images/unchecked.gif') no-repeat;
-    background-position-y: 3px;
-    padding-left: 20px;
     display: block;
-    margin-top: 20px;
-}
-label.valid {
-    display: block;
-
     position: absolute;
+    top: 0px;
     right: 0;
-    left: auto;
-    margin-top: -6px;
-    width: 20px;
-    height: 20px;
-    background: transparent;
     &:after {
         font-family: 'Material-Design-Iconic-Font';
-        content: '\f269';
-        width: 100%;
-        height: 100%;
         position: absolute;
-        /* right: 0; */
-        font-size: 16px;
-        color: green;
+        content: '\f1f8';
+        right: 20px;
+        top: 37px;
+        font-size: 23px;
+        color: #c70000;
     }
 }
-.label-agree-term {
+input.error {
+    border: 1px solid #c70000;
+}
+.select-list {
     position: relative;
-    top: 0%;
-    @include transform(translateY(0));
-}
-.material-icons-name {
-    font-size: 18px;
-}
-
-
-// Login
-
-.signin-content {
-    @extend display-flex;
-    padding-top: 67px;
-    padding-bottom: 87px;
-    // padding: 67px 0;
-}
-.social-login {
-    @extend display-flex;
-    @include align-items(center);
-    margin-top: 80px;
-}
-.social-label {
     display: inline-block;
-    margin-right: 15px;
+    width: 100%;
+    margin-bottom: 47px;
 }
-.socials {
-    @extend display-flex;
-    @extend list-type-ulli;
-    li {
-        padding: 5px;
-        &:last-child {
-            margin-right: 0px;
-        }
-        a {
-            text-decoration: none;
-            i {
-                width: 30px;
-                height: 30px;
-                color: #fff;
-                font-size: 14px;
-                @include border-radius(5px);
-                @include transform(translateZ(0));
-                -webkit-transition-duration: 0.3s;
-                transition-duration: 0.3s;
-                -webkit-transition-property: transform;
-                transition-property: transform;
-                -webkit-transition-timing-function: ease-out;
-                transition-timing-function: ease-out;
-            }
-        }
-        &:hover {
-            a {
-                i {
-                    -webkit-transform: scale(1.3) translateZ(0);
-                    transform: scale(1.3) translateZ(0); 
-                }
-            }
-        }
-    }
-}
-.zmdi-facebook {
-    background: #3b5998;
-}
-.zmdi-twitter {
-    background: #1da0f2;
-}
-.zmdi-google {
-    background: #e72734;
-}
-.signin-form {
-    margin-right: 90px;
-    margin-left: 80px;
-}
-.signin-image {
-    margin-left: 110px;
-    margin-right: 20px;
-    margin-top: 10px;
+.list-item {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
 }
   

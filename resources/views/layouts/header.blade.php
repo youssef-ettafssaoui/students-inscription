@@ -62,8 +62,9 @@
                                             <span class="top_bar_title social_title"></span>
                                             <ul>
                                                 @if (!Auth::check())
-                                                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"
-                                                                aria-hidden="true"></i>
+                                                    <li><a href="{{ route('login') }}" data-toggle="modal"
+                                                            data-target="#exampleModal">
+                                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
                                                             S'IDENTIFIER</a></li>
                                                     <li><a href="/register"><i class="fa fa-users"
                                                                 aria-hidden="true"></i>ESPACE ETUDIANTS</a></li>
@@ -216,3 +217,67 @@
                 box-sizing: border-box;
             }
         </style>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Se Connecter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="email"
+                                    class="col-md-12 col-form-label text-md-left">{{ __('Adresse E-Mail') }}</label>
+
+                                <div class="col-md-12">
+                                    <input id="email" type="email"
+                                        placeholder="Veuillez saisir votre Adresse E-mail"
+                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                        name="email" value="{{ old('email') }}" required autofocus>
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password"
+                                    class="col-md-12 col-form-label text-md-left">{{ __('Mot de Passe') }}</label>
+
+                                <div class="col-md-12">
+                                    <input id="password" placeholder="Veuillez saisir votre Mot de Passe"
+                                        type="password"
+                                        class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                        name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"
+                                style="color: #fff;">&nbsp;</i>Fermer</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-sign-in" style="color: #fff;">&nbsp;</i> Se Connecter
+                        </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
