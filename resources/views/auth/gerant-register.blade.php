@@ -7,7 +7,7 @@
                 <img src="{{ asset('auth/images/test.jpg') }}" alt="">
                 <div class="signup-img-content">
                     <h2>Espace Gérants </h2>
-                    <p>while seats are available !</p>
+                    <p>Plateforme d'inscription des Étudiants !</p>
                 </div>
             </div>
 
@@ -133,7 +133,6 @@
                     <div class="form-submit">
                         <input type="submit" name="signup" id="submit" class="submit" value="S'INSCRIRE" />
                     </div>
-                    <span>Déja un Memebre, Vous pouvez <a href="/login">Se Connecter</a></span>
                 </form>
             </div>
         </div>

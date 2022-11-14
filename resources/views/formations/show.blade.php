@@ -72,7 +72,6 @@
                                     <div class="col-lg-9">
                                         <div class="tabs d-flex flex-row align-items-center justify-content-start">
                                             <div class="tab active">Description</div>
-                                            <div class="tab">Candidats</div>
                                         </div>
                                     </div>
                                 </div>
@@ -89,108 +88,6 @@
                             <div class="panel_title">La Procédure de Séléction pour Cette Formation</div>
                             <div class="panel_text">
                                 <p>{{ $formation->texte }}</p>
-                            </div>
-                        </div>
-
-                        <!-- Members -->
-                        <div class="tab_panel members">
-                            <div class="panel_title">Members</div>
-                            <div class="panel_text">
-                                <p>Lorem ipsum dolor sit amet, te eros consulatu pro, quem labores petentium no sea, atqui
-                                    posidonium interpretaris pri eu. At soleat maiorum platonem vix, no mei case fierent.
-                                    Primis quidam ancillae te mei.</p>
-                            </div>
-                            <div class="members_list d-flex flex-row flex-wrap align-items-start justify-content-start">
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_1.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_0.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_0.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_2.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_3.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_4.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_0.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_5.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_6.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_0.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_7.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_8.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_0.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_9.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
-
-                                <!-- Member -->
-                                <div class="member">
-                                    <div class="member_image"><img src="images/member_0.jpg" alt=""></div>
-                                    <div class="member_title"><a href="#">Sarah Parker</a></div>
-                                </div>
                             </div>
                         </div>
                     </div>

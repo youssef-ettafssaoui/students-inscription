@@ -204,10 +204,6 @@
         </div>
 
         <style>
-            body {
-                font-family: "Open Sans Condensed";
-            }
-
             a {
                 text-decoration: none;
                 color: rgb(4, 0, 119);

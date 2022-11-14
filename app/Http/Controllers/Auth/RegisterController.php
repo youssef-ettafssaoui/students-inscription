@@ -57,7 +57,8 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'cin' => ['required', 'max:9', 'unique:etudiants'],
-            'cne' => ['required', 'max:10', 'unique:etudiants']
+            'cne' => ['required', 'max:10', 'unique:etudiants'],
+            'dob' => 'required',
         ]);
     }
 
@@ -79,8 +80,10 @@ class RegisterController extends Controller
         Etudiant::create([
             'user_id' => $user->id,
             'gender' => request('gender'),
+            'cin' => request('cin'),
+            'cne' => request('cne'),
             'dob' => request('dob')
         ]);
-        return $user;
+        return redirect()->back()->with('message', 'Nous avons crée votre Compte Etudiant avec succès !');
     }
 }

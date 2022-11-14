@@ -7,10 +7,15 @@
                 <img src="{{ asset('auth/images/test.jpg') }}" alt="">
                 <div class="signup-img-content">
                     <h2>Espace Etudiants </h2>
-                    <p>while seats are available !</p>
+                    <p>Plateforme d'inscription des Étudiants !</p>
                 </div>
             </div>
             <div class="signup-form">
+                @if (Session::has('message'))
+                    <div class="alert alert-success">
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
                 <form method="POST" action="{{ route('register') }}" class="register-form" id="register-form">
                     @csrf
                     <div class="form-row">
@@ -61,12 +66,13 @@
                         </div>
                         <div class="form-group">
                             <div class="form-input">
-                                <label for="cne"><i class="zmdi zmdi-account-box material-icons-name"></i> Adresse
+                                <label for="email"><i class="zmdi zmdi-account-box material-icons-name"></i> Adresse
                                     Email</label>
-                                <input id="cne" type="text" class="form-control @error('cne') is-invalid @enderror"
-                                    name="cne" value="{{ old('cne') }}" required autocomplete="cne" autofocus
-                                    placeholder="Veuillez saisir votre CNE" />
-                                @error('cne')
+                                <input id="email" type="text"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email" autofocus
+                                    placeholder="Veuillez saisir votre Adresse Email" />
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -96,7 +102,7 @@
                     </div>
 
                     <div class="form-submit">
-                        <input type="submit" value="S'INSCRIRE" class="submit" id="submit" name="submit" />
+                        <input type="submit" name="signup" id="submit" class="submit" value="S'INSCRIRE" />
                     </div>
                 </form>
             </div>

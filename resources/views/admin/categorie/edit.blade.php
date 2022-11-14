@@ -56,7 +56,7 @@
                                     <label for="icon">Icon Catégorie</label>
                                     <input type="text" name="icon"
                                         class="form-control @error('icon') is-invalid @enderror"
-                                        placeholder="Icon Catégorie" value="{{ old('icon') }}">
+                                        placeholder="Icon Catégorie" value="{{ $categorie->icon }}">
                                     @error('icon')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@
 
                             <div class="form-group">
                                 <a href="{{ route('categorie.index') }}" class="btn btn-danger"><i class="fa fa-undo"></i>
-                                    Annuler l'Ajout</a>
+                                    Annuler la Modification</a>
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-save"></i> Enregistrer Modification
                                 </button>

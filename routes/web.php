@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EtablissementController;
 use App\Http\Controllers\FormationController;
+use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\GerantController;
 use App\Http\Controllers\GerantRegisterController;
 use Illuminate\Support\Facades\Route;
@@ -80,6 +81,14 @@ Route::post('/formations/{id}/edit', [FormationController::class, 'update'])->na
 Route::get('/formations/ma-formation', [FormationController::class, 'maformation'])->name('ma.formation');
 
 Route::get('/formations/applications', [FormationController::class, 'applicant'])->name('applicant');
+
+Route::post('/applications/{id}', [FormationController::class, 'apply'])->name('apply');
+
+//Enregistrer les Emplois
+
+Route::post('/save/{id}', [FavouriteController::class, 'saveFormation']);
+
+Route::post('/unsave/{id}', [FavouriteController::class, 'unSaveFormation']);
 
 
 Route::resource('categorie', CategorieController::class);

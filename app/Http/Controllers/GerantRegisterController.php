@@ -38,6 +38,6 @@ class GerantRegisterController extends Controller
             'origin' => request('origin'),
 
         ]);
-        return redirect()->route('home')->with('message', 'Nous avons crée votre Compte Gérant avec succès !');
+        return redirect()->back()->with('message', 'Nous avons crée votre Compte Gérant avec succès !');
     }
 }
