@@ -29,4 +29,10 @@ class HomeController extends Controller
         }
         return view('home');
     }
+
+    public function saveFormations()
+    {
+        $formations = Auth::user()->favorites;
+        return view('saveFormations', compact('formations'));
+    }
 }

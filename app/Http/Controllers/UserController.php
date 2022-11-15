@@ -16,8 +16,6 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'address' => 'required',
-            'cin' => 'required|min:8',
-            'cne' => 'required|min:10',
             'bio' => 'required|min:20',
             'phone_number' => 'required|min:10|numeric'
         ]);
@@ -26,12 +24,24 @@ class UserController extends Controller
 
         Etudiant::where('user_id', $user_id)->update([
             'address' => request('address'),
-            'cin' => request('cin'),
-            'cne' => request('cne'),
-            'bio' => request('bio'),
-            'phone_number' => request('phone_number')
+            'phone_number' => request('phone_number'),
+            'gender' => request('gender'),
+            'bio' => request('bio')
         ]);
         return redirect()->back()->with('message', 'Profil mis à jour avec succès !');
+    }
+
+    public function resume(Request $request)
+    {
+        $this->validate($request, [
+            'resume' => 'required|mimes:pdf,doc,docx|max:20000'
+        ]);
+        $user_id = auth()->user()->id;
+        $resume = $request->file('resume')->store('public/files');
+        Etudiant::where('user_id', $user_id)->update([
+            'resume' => $resume
+        ]);
+        return redirect()->back()->with('message', 'CV mis à jour avec succès !');
     }
 
     public function avatar(Request $request)

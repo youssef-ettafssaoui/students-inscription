@@ -53,9 +53,13 @@ Route::get('/gerants', [GerantController::class, 'gerant'])->name('gerant');
 Route::get('/category/{id}/formations', [CategoryController::class, 'index'])->name('category.index');
 
 // SECTION DES ETUDIANTS :
+Route::get('/saveFormations', [HomeController::class, 'saveFormations'])->name('saveFormations');
+
 Route::get('user/profile', [UserController::class, 'index'])->name('user.profile');
 
 Route::post('user/profile/create', [UserController::class, 'store'])->name('profile.create');
+
+Route::post('user/resume', [UserController::class, 'resume'])->name('resume');
 
 Route::post('user/avatar', [UserController::class, 'avatar'])->name('avatar');
 

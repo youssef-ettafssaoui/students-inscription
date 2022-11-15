@@ -11,6 +11,11 @@ class Gerant extends Model
 
     protected $guarded = [];
 
+    public function etablissement()
+    {
+        return $this->belongsTo('App\Models\Etablissement');
+    }
+
     public function formations()
     {
         return $this->hasMany('App\Models\Formation');

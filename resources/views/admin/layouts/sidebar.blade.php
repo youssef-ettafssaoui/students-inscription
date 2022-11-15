@@ -68,7 +68,6 @@
                                 <a href="{{ route('post.index') }}" class="menu-item">Publications</a>
                                 <a href="{{ route('post.create') }}" class="menu-item">Créer</a>
                                 <a href="{{ route('post.trash') }}" class="menu-item">Corbeil</a>
-
                             </div>
                         </div>
                     @endif
@@ -110,7 +109,21 @@
                         </div>
                     @endif
 
+                    @if (auth()->check() && auth()->user()->role->name === 'etudiant')
+                        <div class="nav-item">
+                            <a href="{{ route('user.profile') }}"><i class="ik ik-user"></i><span>
+                                    Profile</span>
+                                <span class="badge badge-danger"></span></a>
+                        </div>
+                    @endif
 
+                    @if (auth()->check() && auth()->user()->role->name === 'etudiant')
+                        <div class="nav-item">
+                            <a href="{{ route('saveFormations') }}"><i class="ik ik-save"></i><span>
+                                    Formations Enregistrées</span>
+                                <span class="badge badge-danger"></span></a>
+                        </div>
+                    @endif
 
                     <div class="nav-item active">
                         <a onclick="event.preventDefault();

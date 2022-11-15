@@ -110,7 +110,8 @@
                                         <li class="d-flex flex-row align-items-start justify-content-start">
                                             <div class="feature_title"><i class="fa fa-clock-o"
                                                     aria-hidden="true"></i><span>Duration</span></div>
-                                            <div class="feature_text ml-auto">{{ $formation->masse_horraire }} Heures
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                {{ $formation->masse_horraire }} Heures
                                             </div>
                                         </li>
 
@@ -118,35 +119,69 @@
                                         <li class="d-flex flex-row align-items-start justify-content-start">
                                             <div class="feature_title"><i class="fa fa-book"
                                                     aria-hidden="true"></i><span>Type</span></div>
-                                            <div class="feature_text ml-auto">{{ $formation->type }}</div>
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                {{ $formation->type }}</div>
                                         </li>
+
+                                        <!-- Feature -->
+                                        <li class="d-flex flex-row align-items-start justify-content-start">
+                                            <div class="feature_title"><i class="fa fa-home"
+                                                    aria-hidden="true"></i><span>Etablissement</span></div>
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                {{ $formation->gerant->etablissement->slogan }}
+                                            </div>
+                                        </li>
+
+                                        <!-- Feature -->
+                                        <li class="d-flex flex-row align-items-start justify-content-start">
+                                            <div class="feature_title"><i class="fa fa-envelope"
+                                                    aria-hidden="true"></i><span>Email de Contact</span></div>
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                {{ $formation->gerant->etablissement->email }}
+                                            </div>
+                                        </li>
+
+                                        <!-- Feature -->
+                                        <li class="d-flex flex-row align-items-start justify-content-start">
+                                            <div class="feature_title"><i class="fa fa-link"
+                                                    aria-hidden="true"></i><span>Website</span></div>
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                <a href="{{ $formation->gerant->etablissement->website }}"
+                                                    class="badge badge-primary">Consulter</a>
+                                            </div>
+                                        </li>
+
 
                                         <!-- Feature -->
                                         <li class="d-flex flex-row align-items-start justify-content-start">
                                             <div class="feature_title"><i class="fa fa-id-badge"
                                                     aria-hidden="true"></i><span>Gérant de Formation</span></div>
-                                            <div class="feature_text ml-auto">{{ $formation->gerant->gname }}</div>
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                {{ $formation->gerant->gname }}</div>
                                         </li>
 
                                         <!-- Feature -->
                                         <li class="d-flex flex-row align-items-start justify-content-start">
                                             <div class="feature_title"><i class="fa fa-briefcase"
                                                     aria-hidden="true"></i><span>Métier du Gérant</span></div>
-                                            <div class="feature_text ml-auto">{{ $formation->gerant->position }}</div>
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                {{ $formation->gerant->position }}</div>
                                         </li>
 
                                         <!-- Feature -->
                                         <li class="d-flex flex-row align-items-start justify-content-start">
                                             <div class="feature_title"><i class="fa fa-phone"
                                                     aria-hidden="true"></i><span>Contact du Gérant</span></div>
-                                            <div class="feature_text ml-auto">{{ $formation->gerant->phone }}</div>
+                                            <div class="feature_text ml-auto text-primary font-weight-bold">
+                                                {{ $formation->gerant->phone }}</div>
                                         </li>
 
                                         <!-- Feature -->
                                         <li class="d-flex flex-row align-items-start justify-content-start">
                                             <div class="feature_title"><i class="fa fa-calendar"
                                                     aria-hidden="true"></i><span>Dernier Délai</span></div>
-                                            <div class="feature_text ml-auto text-danger">{{ $formation->last_date }}
+                                            <div class="feature_text ml-auto text-danger font-weight-bold">
+                                                {{ $formation->last_date }}
                                             </div>
                                         </li>
 

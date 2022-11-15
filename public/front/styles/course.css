@@ -398,7 +398,7 @@ section {
     font-size: 24px;
     font-weight: 700;
     line-height: 0.75;
-    color: #df9621;
+    color: #002b9a;
     vertical-align: middle;
     -webkit-transition: all 200ms ease;
     -moz-transition: all 200ms ease;
@@ -489,7 +489,7 @@ section {
     opacity: 0;
 }
 .header_search_input:focus {
-    border-bottom: solid 2px #df9621 !important;
+    border-bottom: solid 2px #002b9a !important;
 }
 .header_search_input::-webkit-input-placeholder {
     font-family: "Poppins", sans-serif;
@@ -586,7 +586,7 @@ section {
     transition: all 200ms ease;
 }
 .hamburger:hover i {
-    color: #df9621;
+    color: #002b9a;
 }
 
 /*********************************
@@ -673,7 +673,7 @@ section {
     transition: all 200ms ease;
 }
 .menu_nav ul li a:hover {
-    color: #df9621;
+    color: #002b9a;
 }
 .menu .search {
     width: 100%;
@@ -739,7 +739,7 @@ section {
     color: rgba(0, 0, 0, 0.15) !important;
 }
 .menu .search_input:focus {
-    border-bottom: solid 2px #df9621;
+    border-bottom: solid 2px #002b9a;
 }
 .header_search_button {
     position: absolute;
@@ -897,7 +897,7 @@ section {
     color: #ffffff;
     font-size: 12px;
     font-weight: 600;
-    background: #df9621;
+    background: #002b9a;
     border-radius: 3px;
     margin-right: 28px;
 }
@@ -1045,7 +1045,7 @@ section {
 }
 .tab.active,
 .tab:hover {
-    border-bottom: solid 3px #df9621;
+    border-bottom: solid 3px #002b9a;
 }
 .tab_panel {
     display: none !important;
@@ -1129,7 +1129,7 @@ section {
     transition: all 200ms ease;
 }
 .instructor_name a:hover {
-    color: #df9621;
+    color: #002b9a;
 }
 .instructor_title {
     margin-top: 1px;
@@ -1418,7 +1418,7 @@ section {
     transition: all 200ms ease;
 }
 .review_author_name a:hover {
-    color: #df9621;
+    color: #002b9a;
 }
 .review_date {
     font-size: 10px;
@@ -1492,7 +1492,7 @@ section {
 .sidebar_top {
     width: calc(100% + 113px);
     height: 80px;
-    background: #df9621;
+    background: #002b9a;
 }
 .sidebar_top a {
     display: block;
@@ -1576,7 +1576,7 @@ section {
 .like_price {
     font-size: 12px;
     font-weight: 700;
-    color: #df9621;
+    color: #002b9a;
 }
 
 /*********************************
@@ -1729,7 +1729,7 @@ section {
     border-bottom: solid 1px #ffffff;
 }
 .newsletter_input:focus {
-    border-bottom: solid 1px #df9621 !important;
+    border-bottom: solid 1px #002b9a !important;
 }
 .newsletter_form:hover .newsletter_button i {
     color: #ffffff;

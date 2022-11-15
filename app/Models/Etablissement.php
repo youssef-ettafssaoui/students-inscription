@@ -14,6 +14,6 @@ class Etablissement extends Model
 
     public function gerants()
     {
-        return $this->hasMany(Gerant::class);
+        return $this->hasMany('App\Models\Gerant');
     }
 }
