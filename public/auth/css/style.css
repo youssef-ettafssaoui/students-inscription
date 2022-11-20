@@ -416,7 +416,7 @@ input {
     font-family: "Poppins";
 }
 input:focus {
-    border: 1px solid #794207;
+    border: 1px solid #071679;
 }
 
 .label-flex {
@@ -517,10 +517,10 @@ input[type="radio"] {
     visibility: hidden;
 }
 input[type="radio"]:checked ~ .check {
-    border: 1px solid #794207;
+    border: 1px solid #071679;
 }
 input[type="radio"]:checked ~ .check::before {
-    background: #794207;
+    background: #071679;
 }
 
 ul {
@@ -550,7 +550,7 @@ ul li:not(.init) {
 
 ul li:not(.init):hover,
 ul li.selected:not(.init) {
-    background: #794207;
+    background: #071679;
     color: #fff;
 }
 
@@ -589,13 +589,13 @@ li.init:after {
     -ms-border-radius: 2.5px;
 }
 #slider-margin .noUi-connect {
-    background: #794207;
+    background: #071679;
 }
 #slider-margin .noUi-handle {
     width: 100px;
     height: 30px;
     top: -12px;
-    background: #794207;
+    background: #071679;
     box-shadow: 0px 3px 2.85px 0.15px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 3px 2.85px 0.15px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0px 3px 2.85px 0.15px rgba(0, 0, 0, 0.1);
@@ -693,18 +693,18 @@ li.init:after {
     border: 2px solid #ebebeb;
 }
 #reset:hover {
-    border: 2px solid #794207;
-    background: #794207;
+    border: 2px solid #071679;
+    background: #071679;
     color: #fff;
 }
 
 #submit {
-    background: #794207;
+    background: #071679;
     color: #fff;
     margin-right: 25px;
 }
 #submit:hover {
-    background-color: #267747;
+    background-color: #263877;
 }
 
 .form-input {
