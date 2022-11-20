@@ -21,7 +21,7 @@
 
     <div class="intro">
         <div class="intro_background parallax-window" data-parallax="scroll"
-            data-image-src="{{ asset('front/images/gerant-intro.jpg') }}" data-speed="0.8">
+            data-image-src="{{ asset('front/images/introo.png') }}" data-speed="0.8">
         </div>
         <div class="container">
             <div class="row">
@@ -76,9 +76,9 @@
 
                                         <div class="text-center">
                                             @if (empty($gerant->logo))
-                                                <img class="rounded" width="100" src="{{ asset('avatar/man.jpg') }}">
+                                                <img class="rounded" width="50%" src="{{ asset('avatar/man.jpg') }}">
                                             @else
-                                                <img class="img-fluid" width="100"
+                                                <img class="rounded-circle" width="50%"
                                                     src="{{ asset('uploads/logo') }}/{{ $gerant->logo }}">
                                             @endif
                                         </div><br>
@@ -88,8 +88,10 @@
                                         <li class="d-flex flex-row align-items-start justify-content-start">
                                             <div class="feature_title"><i class="fa fa-building"
                                                     aria-hidden="true"></i><span>Travaille à :</span></div>
-                                            <div class="feature_text ml-auto">{{ $gerant->work }}</div>
+                                            <div class="feature_text ml-auto">{{ $gerant->etablissement->etablissement }}
+                                            </div>
                                         </li>
+
 
                                         <!-- Feature -->
                                         <li class="d-flex flex-row align-items-start justify-content-start">
@@ -98,12 +100,6 @@
                                             <div class="feature_text ml-auto">{{ $gerant->origin }}</div>
                                         </li>
 
-                                        <!-- Feature -->
-                                        <li class="d-flex flex-row align-items-start justify-content-start">
-                                            <div class="feature_title"><i class="fa fa-phone"
-                                                    aria-hidden="true"></i><span>Téléphone</span></div>
-                                            <div class="feature_text ml-auto">{{ $gerant->phone }}</div>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>

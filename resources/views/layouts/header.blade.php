@@ -116,8 +116,8 @@
                                     <ul class="main_nav">
                                         <li class="active"><a href="/">ACCUEIL</a></li>
                                         <li><a href="/formations/allformations">NOS FORMATIONS</a></li>
+                                        <li><a href="{{ route('etablissement') }}">NOS ETABLISSEMENTS</a></li>
                                         <li><a href="/gerants">GÉRANTS</a></li>
-                                        <li><a href="/">CONTACTEZ-NOUS</a></li>
                                     </ul>
                                 </nav>
                                 <div class="header_content_right ml-auto text-right">
@@ -174,7 +174,7 @@
             <nav class="menu_nav">
                 <ul class="menu_mm">
                     <li class="menu_mm"><a href="/">ACCUEIL</a></li>
-                    <li class="menu_mm"><a href="/allformations">NOS FORMATIONS</a></li>
+                    <li class="menu_mm"><a href="/formations/allformations">NOS FORMATIONS</a></li>
                     <li class="menu_mm"><a href="/gerants">GÉRANTS</a></li>
                     <li class="menu_mm"><a href="contact.html">CONTACTEZ-NOUS</a></li>
                 </ul>

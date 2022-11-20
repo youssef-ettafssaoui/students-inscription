@@ -108,4 +108,10 @@ class EtablissementController extends Controller
         $etablissement->delete();
         return redirect()->route('etablissement.index')->with('message', 'Etablissement supprimée avec Succès !');
     }
+
+    public function etablissement()
+    {
+        $etablissements = Etablissement::latest()->paginate(20);
+        return view('etablissement.etablissement', compact('etablissements'));
+    }
 }

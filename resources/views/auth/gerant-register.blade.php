@@ -8,15 +8,17 @@
                 <div class="signup-img-content">
                     <h2>Espace Gérants </h2>
                     <p>Plateforme d'inscription des Étudiants !</p>
+                    @if (Session::has('message'))
+                        <p class="alert alert-success text-success bg-white">
+                            {{ Session::get('message') }}
+                        </p>
+                    @endif
                 </div>
             </div>
 
+
             <div class="signup-form">
-                @if (Session::has('message'))
-                    <div class="alert alert-success">
-                        {{ Session::get('message') }}
-                    </div>
-                @endif
+
                 <form method="POST" action="" class="register-form" id="register-form">
                     @csrf
                     <div class="form-row">

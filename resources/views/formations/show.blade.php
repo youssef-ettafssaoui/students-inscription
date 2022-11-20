@@ -218,14 +218,21 @@
                                 <div class="like_items">
                                     @foreach ($formationRecommendations as $formationRecommendation)
                                         <!-- Like Item -->
-                                        <div class="like_item d-flex flex-row align-items-end justify-content-start">
-                                            <div class="like_title_container">
-                                                <div class="like_title">{{ $formationRecommendation->title }}</div>
-                                                <div class="like_subtitle">{{ $formationRecommendation->gerant->gname }}
+                                        <a
+                                            href="{{ route('formations.show', [$formationRecommendation->id, $formationRecommendation->slug]) }}">
+                                            <div class="like_item d-flex flex-row align-items-end justify-content-start">
+                                                <div class="like_title_container">
+                                                    <div class="like_title">{{ $formationRecommendation->title }}</div>
+                                                    <div class="like_subtitle">
+                                                        {{ $formationRecommendation->gerant->gname }}
+                                                    </div>
+                                                </div>
+                                                <div class="like_price ml-auto">
+                                                    {{ $formationRecommendation->type }}
                                                 </div>
                                             </div>
-                                            <div class="like_price ml-auto">{{ $formationRecommendation->type }}</div>
-                                        </div>
+                                        </a>
+                                        <br />
                                     @endforeach
                                 </div>
                             </div>

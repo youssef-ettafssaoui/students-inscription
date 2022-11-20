@@ -99,6 +99,8 @@ Route::resource('categorie', CategorieController::class);
 
 Route::resource('etablissement', EtablissementController::class);
 
+Route::get('/etablissements', [EtablissementController::class, 'etablissement'])->name('etablissement');
+
 Route::get('/posts', [DashboardController::class, 'index'])->name('post.index');
 
 Route::get('/posts/create', [DashboardController::class, 'create'])->name('post.create');
